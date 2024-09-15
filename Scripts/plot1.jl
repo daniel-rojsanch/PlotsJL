@@ -43,4 +43,8 @@ title!("f(x) = x^2")
 savefig("Img/primer_grafico.svg")
 
 x_normal = randn(10000);
-histogram(x_normal)
+histogram(x_normal, label = "Normal", c = :red, alpha = 0.5)
+
+using Distributions
+y = rand(Beta(5, 3), 10000);
+histogram!(y, alpha = 0.5, c = :blue, label = "Beta")
